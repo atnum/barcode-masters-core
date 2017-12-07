@@ -10,7 +10,6 @@ D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\repository\G
 D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\repository\exception\UserRoleNotFoundException.java
 D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\service\PDService.java
 D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\entity\Product.java
-D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\ProductDao.java
 D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\service\ProductTempService.java
 D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\entity\ProductTemp.java
 D:\Spring\Spring-Space\jsf-search-templating\src\main\java\com\anup\service\UserService.java
