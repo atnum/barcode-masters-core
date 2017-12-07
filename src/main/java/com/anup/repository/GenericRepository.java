@@ -12,10 +12,10 @@ public interface GenericRepository extends JpaRepository<Generic, Long> {
 	//List<Generic> findByContainerIdContainingIgnoreCase(String containerId);
 	
 	@Query(value = "SELECT * from XX_GENERIC_LABELS c where UPPER(c.container_id) LIKE %?1% OR LOWER(c.container_id) LIKE %?1% ORDER BY 1 DESC", nativeQuery = true)
-	List<Generic> findByContainerIdContainingIgnoreCase(String containerId );
+	List<Generic> findByContainerIdContainingIgnoreCase(String containerId);
 
 	@Query(value = "SELECT c.container_id from XX_GENERIC_LABELS c where c.container_id = ?1", nativeQuery = true)
-	String isContainerIdExist(String containerId );
+	String isContainerIdExist(String containerId);
 
     @Query(value = "select '10000' || RANDOM_CONTAINER_SEQ.nextval from dual", nativeQuery = true) 
 	//@Query(value = "select 1", nativeQuery = true) 

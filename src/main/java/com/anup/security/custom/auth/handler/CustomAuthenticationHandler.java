@@ -21,7 +21,7 @@ public class CustomAuthenticationHandler extends SimpleUrlAuthenticationSuccessH
 Authentication authentication) throws ServletException, IOException {
       String userTargetUrl = "/user/welcome.jsf";
       String adminTargetUrl = "/admin/Admin.jsf";
-      String zebraTargetUrl = "/View/Secured/Zebra/welcome.jsf";
+      String zebraTargetUrl = "/View/Secured/zebra/welcome.jsf";
       Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
       if (roles.contains("ROLE_ADMIN")) {
          getRedirectStrategy().sendRedirect(request, response, adminTargetUrl);

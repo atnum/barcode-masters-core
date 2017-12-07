@@ -24,8 +24,8 @@ public class GenericService {
 
 	}
 
-	public List<Generic> getContainerLike(String containerId  ) {
-		return genericRepository.findByContainerIdContainingIgnoreCase(containerId );
+	public List<Generic> getContainerLike(String containerId) {
+		return genericRepository.findByContainerIdContainingIgnoreCase(containerId);
 	}
 
 	public void save(Generic generic) {
@@ -36,7 +36,7 @@ public class GenericService {
 		return facilityRepository.allFacilityId();
 	}
 
-	public String isContainerExist(String containerId ) {
+	public String isContainerExist(String containerId) {
 		return genericRepository.isContainerIdExist(containerId);
 	}
 
@@ -44,7 +44,7 @@ public class GenericService {
 		return genericRepository.randomContainer();
 	}
 
-	public List<Generic> findAllByDesc( ) {
+	public List<Generic> findAllByDesc() {
 		return genericRepository.findAllByDesc();
 	}
 }

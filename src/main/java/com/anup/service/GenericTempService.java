@@ -38,7 +38,7 @@ public class GenericTempService {
 		return addressRepository.defaultPort();
 	}
 
-	public List<Generic> findAllByGenericTemp( ) {
+	public List<Generic> findAllByGenericTemp() {
 		return genericRepository.findAllGenericTempByDesc();
 
 	}

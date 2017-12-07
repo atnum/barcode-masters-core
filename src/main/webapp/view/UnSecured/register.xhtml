@@ -15,7 +15,7 @@
 
 	<style>
 body {
-	background-image: url("resources/images/backg1.png");
+	background-image: url("#{resource['static/images/backg1.png']}");
 	font-family: 'Andika';
 	font-size: 16px;
 	font-weight: 200;
@@ -77,7 +77,7 @@ h3 {
 				<br />
 				<br />
 				<b:navLink value="Sign In"
-					href="#{request.contextPath}/"
+					href="#{request.contextPath}/login.jsf"
 					iconAwesome="fa-sign-in" />
 			</p:row>
 			<br />

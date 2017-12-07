@@ -123,7 +123,7 @@ public class GenericController implements Serializable {
 
 		System.out.println("The IP Address inside init() is: " + ip);
 
-		asnList = asnRepository.findAllAsn(myASN);
+		// asnList = asnRepository.findAllAsn(myASN); //(Slower Login Bug)
 
 		// myList = repository.findAllByDesc();
 
