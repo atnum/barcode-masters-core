@@ -1,20 +1,19 @@
 package com.anup;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.anup.security.custom.auth.handler.CustomAuthenticationHandler;
-
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  *
@@ -36,12 +35,12 @@ public class MyWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/View/UnSecured/**").permitAll()
 				.antMatchers("/resources/**").permitAll()
 				.antMatchers("/css/**", "/js/**", "/images/**", "/resources/**").permitAll()
-				.antMatchers("/View/UnSecured/login.xhtml").permitAll().antMatchers("/javax.faces.resource/**")
+				.antMatchers("/View/UnSecured/login.jsf").permitAll().antMatchers("/javax.faces.resource/**")
 				.permitAll()// for Primefaces
 				.antMatchers("/View/Secured/Admin/**").access("hasRole('ROLE_ADMIN')")
 				.antMatchers("/View/Secured/User/**").access("hasRole('ROLE_USER')").anyRequest().authenticated().and()
-				.formLogin().loginPage("/View/UnSecured/login.xhtml")
-				.failureUrl("/View/UnSecured/login.xhtml?auth=fail")// login
+				.formLogin().loginPage("/View/UnSecured/login.jsf")
+				.failureUrl("/View/UnSecured/login.jsf?auth=fail")// login
 																	// configuration
 				.usernameParameter("username").passwordParameter("password")
 				.successHandler(customAuthenticationHandler()).permitAll()
@@ -67,7 +66,7 @@ public class MyWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 											// identify token keep for one day
 				.alwaysRemember(false).and().logout() // logout configuration
 				// .logoutUrl("/logout")
-				.logoutSuccessUrl("/View/UnSecured/login.xhtml")
+				.logoutSuccessUrl("/View/UnSecured/login.jsf")
 				// .logoutSuccessUrl("/index.xhtml")
 				.invalidateHttpSession(true).deleteCookies("JSESSIONID").permitAll().and().csrf().disable(); // Permissions
 																												// here
