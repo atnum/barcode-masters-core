@@ -15,6 +15,7 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
 
 		// Manage the lifecycle of the root application context
 		container.addListener(new ContextLoaderListener(rootContext));
+		
 	}
 
 }
